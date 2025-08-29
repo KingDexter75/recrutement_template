@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Développeur Full Stack - TechCorp Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <div class="navbar bg-gradient-to-r from-green-600 to-emerald-600 shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="offres.html"><i class="fas fa-briefcase mr-2"></i>Offres d'emploi</a></li>
+                    <li><a href="mes-candidatures.html"><i class="fas fa-file-alt mr-2"></i>Mes candidatures</a></li>
+                    <li><a href="#"><i class="fas fa-user mr-2"></i>Mon profil</a></li>
+                    <li><a href="../auth/login.html"><i class="fas fa-sign-out-alt mr-2"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+            <a href="offres.html" class="btn btn-ghost text-xl text-white font-bold">
+                <i class="fas fa-search mr-2"></i>
+                JobFinder
+            </a>
+        </div>
+        
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-white">
+                <li><a href="offres.html"><i class="fas fa-briefcase mr-2"></i>Offres d'emploi</a></li>
+                <li><a href="mes-candidatures.html"><i class="fas fa-file-alt mr-2"></i>Mes candidatures</a></li>
+            </ul>
+        </div>
+        
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full bg-white bg-opacity-20">
+                        <div class="avatar-custom">
+                            <span>MD</span>
+                        </div>
+                    </div>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li class="menu-title">Marie Dupont</li>
+                    <li><a href="../auth/login.html"><i class="fas fa-sign-out-alt mr-2"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Breadcrumb -->
+        <div class="breadcrumbs text-sm mb-6">
+            <ul>
+                <li><a href="offres.html" class="text-green-600 hover:text-green-800">Offres d'emploi</a></li>
+                <li>Développeur Full Stack</li>
+            </ul>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Contenu principal -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- En-tête de l'offre -->
+                <div class="bg-white rounded-lg shadow-sm p-8">
+                    <div class="flex items-start gap-6 mb-6">
+                        <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-2xl">
+                            TC
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-3">
+                                <h1 class="text-3xl font-bold text-gray-900">Développeur Full Stack</h1>
+                                <span class="contract-badge contract-cdi">CDI</span>
+                                <span class="badge badge-success">Nouveau</span>
+                            </div>
+                            <h2 class="text-xl text-gray-700 mb-4">Startech Sarl</h2>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-3 text-green-600"></i>
+                                    <span>Paris, France</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-3 text-green-600"></i>
+                                    <span>45k - 55k € par an</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock mr-3 text-green-600"></i>
+                                    <span>Publié le 12-10-2025</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-3 text-green-600"></i>
+                                    <span>5 candidats recherchés</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compétences -->
+                    <div class="mb-6">
+                        <h3 class="font-semibold text-gray-900 mb-3">Compétences requises</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Jest</span>
+                            <span class="skill-tag">Express.js</span>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex gap-4">
+                        <button class="btn bg-gradient-to-r from-green-500 to-green-600 text-white border-none flex-1" onclick="candidature_modal.showModal()">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Postuler maintenant
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Description du poste -->
+                <div class="bg-white rounded-lg shadow-sm p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Description du poste</h3>
+                    
+                    <div class="prose max-w-none">
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Nous recherchons un développeur Full Stack passionné pour rejoindre notre équipe dynamique. Vous travaillerez sur des projets innovants utilisant les dernières technologies web dans un environnement collaboratif qui favorise l'apprentissage continu et l'innovation.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Informations entreprise -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">À propos de Startech Sarl</h3>
+
+                    <div class="mt-6">
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            Cliquer en dessous pour voir toutes les offres de cette entreprise.
+                        </p>
+                    </div>
+
+                    <div class="mt-6">
+                        <button class="btn btn-outline w-full">
+                            <i class="fas fa-building mr-2"></i>
+                            Voir toutes les offres
+                        </button>
+                    </div>
+                </div>
+                <!-- Processus de recrutement -->
+                <div class="bg-white rounded-lg shadow-sm p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Processus de recrutement</h3>
+                
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <span class="text-green-600 font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Envoie du CV en ligne</h4>
+                                <p class="text-gray-600 text-sm">Envoyez votre CV</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <span class="text-green-600 font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Envoie de la lettre de motivation en ligne</h4>
+                                <p class="text-gray-600 text-sm">Envoyez votre lettre de motivation</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <span class="text-green-600 font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Soumettre votre candidature</h4>
+                                <p class="text-gray-600 text-sm">Envoyez votre candidature en toute securite</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de candidature -->
+    <dialog id="candidature_modal" class="modal">
+        <div class="modal-box max-w-2xl">
+            <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <h3 class="font-bold text-2xl mb-6 text-center mt-10">
+                <i class="fas fa-paper-plane mr-2 text-green-600"></i>
+                Postuler à cette offre
+            </h3>
+            
+            <form action="mes-candidatures.html" method="get" class="space-y-6">
+
+                <!-- CV -->
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-medium">CV * (PDF, DOC, DOCX - Max 5MB)</span>
+                    </label>
+                    <input type="file" class="file-input file-input-bordered w-full" accept=".pdf,.doc,.docx" required>
+                    <label class="label">
+                        <span class="label-text-alt text-gray-500">Formats acceptés: PDF, DOC, DOCX</span>
+                    </label>
+                </div>
+
+                <!-- Lettre de motivation -->
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-medium">Lettre de motivation *</span>
+                    </label>
+                    <input type="file" class="file-input file-input-bordered w-full" accept=".pdf,.doc,.docx" required>
+                    <label class="label">
+                        <span class="label-text-alt text-gray-500">Formats acceptés: PDF, DOC, DOCX</span>
+                    </label>
+                </div>
+
+                <div class="modal-action">
+                    <button type="submit" class="btn bg-gradient-to-r from-green-500 to-green-600 text-white border-none">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Envoyer ma candidature
+                    </button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Toast notifications -->
+    <div class="toast toast-top toast-end hidden">
+        <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i>
+            <span>Candidature envoyée avec succès !</span>
+        </div>
+    </div>
+</body>
+</html>
+

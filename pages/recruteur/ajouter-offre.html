@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une offre - Dashboard Recruteur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <div class="navbar navbar-custom shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a></li>
+                    <li><a href="ajouter-offre.html"><i class="fas fa-plus mr-2"></i>Nouvelle offre</a></li>
+                    <li><a href="#"><i class="fas fa-user mr-2"></i>Profil</a></li>
+                    <li><a href="../auth/login.html"><i class="fas fa-sign-out-alt mr-2"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+            <a href="dashboard.html" class="btn btn-ghost text-xl text-white font-bold">
+                <i class="fas fa-briefcase mr-2"></i>
+                RecrutPro
+            </a>
+        </div>
+        
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-white">
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a></li>
+                <li><a href="ajouter-offre.html" class="active"><i class="fas fa-plus mr-2"></i>Nouvelle offre</a></li>
+            </ul>
+        </div>
+        
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full bg-white bg-opacity-20">
+                        <div class="avatar-custom">
+                            <span>TC</span>
+                        </div>
+                    </div>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li class="menu-title">TechCorp Solutions</li>
+                    <li><a href="../auth/login.html"><i class="fas fa-sign-out-alt mr-2"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Breadcrumb -->
+        <div class="breadcrumbs text-sm mb-6">
+            <ul>
+                <li><a href="dashboard.html" class="text-blue-600 hover:text-blue-800">Dashboard</a></li>
+                <li>Ajouter une offre</li>
+            </ul>
+        </div>
+
+        <!-- En-tête -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Créer une nouvelle offre d'emploi</h1>
+            <p class="text-gray-600">Remplissez les informations ci-dessous pour publier votre offre</p>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="bg-white rounded-lg shadow-sm p-8">
+            <form action="dashboard.html" method="get" class="space-y-8">
+                <!-- Informations générales -->
+                <div class="border-b border-gray-200 pb-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">
+                        <i class="fas fa-info-circle mr-2 text-blue-600"></i>
+                        Informations générales
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Nom du poste -->
+                        <div class="form-control lg:col-span-2">
+                            <label class="label">
+                                <span class="label-text font-medium">Nom du poste *</span>
+                            </label>
+                            <input type="text" 
+                                   placeholder="Ex: Développeur Full Stack Senior" 
+                                   class="input input-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                   required>
+                        </div>
+
+                        <!-- Type de contrat -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Type de contrat *</span>
+                            </label>
+                            <select class="select select-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                <option disabled selected>Choisir un type</option>
+                                <option value="CDI">CDI - Contrat à Durée Indéterminée</option>
+                                <option value="CDD">CDD - Contrat à Durée Déterminée</option>
+                                <option value="STAGE">Stage</option>
+                            </select>
+                        </div>
+
+                        <!-- Statut de l'offre -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Statut de l'offre *</span>
+                            </label>
+                            <select class="select select-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                <option value="active" selected>Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="closed">Fermée</option>
+                            </select>
+                        </div>
+
+                        <!-- Localisation -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Localisation *</span>
+                            </label>
+                            <div class="relative">
+                                <input type="text" 
+                                       placeholder="Ex: Paris, France" 
+                                       class="input input-bordered w-full pl-10 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                       required>
+                                <i class="fas fa-map-marker-alt absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            </div>
+                        </div>
+
+                        <!-- Nombre de candidats attendus -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Nombre de candidats attendus *</span>
+                            </label>
+                            <input type="number" 
+                                   placeholder="Ex: 5" 
+                                   min="1" 
+                                   class="input input-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                   required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rémunération -->
+                <div class="border-b border-gray-200 pb-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">
+                        <i class="fas fa-euro-sign mr-2 text-green-600"></i>
+                        Rémunération
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Salaire minimum -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Salaire minimum (FCFA) *</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" 
+                                       placeholder="35000" 
+                                       min="0" 
+                                       class="input input-bordered w-full pl-8 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                       required>
+                                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">€</span>
+                            </div>
+                        </div>
+
+                        <!-- Salaire maximum -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Salaire maximum (FCFA) *</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" 
+                                       placeholder="45000" 
+                                       min="0" 
+                                       class="input input-bordered w-full pl-8 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                       required>
+                                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">€</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Compétences requises -->
+                <div class="border-b border-gray-200 pb-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">
+                        <i class="fas fa-cogs mr-2 text-purple-600"></i>
+                        Compétences requises
+                    </h2>
+                    
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-medium">Compétences techniques *</span>
+                            <span class="label-text-alt">Séparez par des virgules</span>
+                        </label>
+                        <textarea class="textarea textarea-bordered h-24 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                  placeholder="Ex: JavaScript, React, Node.js, MongoDB, Git, Docker" 
+                                  required></textarea>
+                    </div>
+
+                </div>
+
+                <!-- Description du poste -->
+                <div class="border-b border-gray-200 pb-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">
+                        <i class="fas fa-file-alt mr-2 text-orange-600"></i>
+                        Description du poste
+                    </h2>
+                    
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-medium">Description détaillée *</span>
+                        </label>
+                        <textarea class="textarea textarea-bordered h-32 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                  placeholder="Décrivez le poste, les missions, l'environnement de travail..." 
+                                  required></textarea>
+                    </div>
+
+                </div>
+
+                <!-- Boutons d'action -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-end pt-6 border-t border-gray-200">
+                    <a href="dashboard.html" class="btn btn-ghost">
+                        <i class="fas fa-times mr-2"></i>
+                        Annuler
+                    </a>
+                    <button type="submit" class="btn btn-gradient text-white">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Publier l'offre
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast de confirmation -->
+    <div class="toast toast-top toast-end hidden">
+        <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i>
+            <span>Offre publiée avec succès !</span>
+        </div>
+    </div>
+</body>
+</html>
+

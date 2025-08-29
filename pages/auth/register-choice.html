@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Choisir votre profil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl w-full">
+            <!-- En-tête -->
+            <div class="text-center mb-12">
+                <div class="mx-auto h-16 w-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-briefcase text-white text-2xl"></i>
+                </div>
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Rejoignez notre plateforme</h1>
+                <p class="text-xl text-gray-600">Choisissez votre profil pour commencer</p>
+            </div>
+
+            <!-- Choix du profil -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Carte Recruteur -->
+                <div class="card bg-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="card-body text-center p-8">
+                        <div class="mx-auto w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-building text-white text-3xl"></i>
+                        </div>
+                        <h2 class="card-title text-2xl font-bold text-gray-900 justify-center mb-4">
+                            Je suis un Recruteur
+                        </h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Publiez vos offres d'emploi, gérez vos candidatures et trouvez les meilleurs talents pour votre entreprise.
+                        </p>
+                        
+                        <!-- Avantages recruteur -->
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center text-left">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-sm text-gray-700">Publier des offres d'emploi</span>
+                            </div>
+                            <div class="flex items-center text-left">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-sm text-gray-700">Gérer les candidatures</span>
+                            </div>
+                            <div class="flex items-center text-left">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-sm text-gray-700">Télécharger CV et lettres</span>
+                            </div>
+                            <div class="flex items-center text-left">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-sm text-gray-700">Dashboard complet</span>
+                            </div>
+                        </div>
+
+                        <div class="card-actions justify-center">
+                            <a href="register-recruteur.html" class="btn btn-gradient text-white px-8 py-3 text-lg">
+                                <i class="fas fa-user-tie mr-2"></i>
+                                S'inscrire comme Recruteur
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Candidat -->
+                <div class="card bg-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="card-body text-center p-8">
+                        <div class="mx-auto w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-user text-white text-3xl"></i>
+                        </div>
+                        <h2 class="card-title text-2xl font-bold text-gray-900 justify-center mb-4">
+                            Je suis un Candidat
+                        </h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Découvrez des opportunités d'emploi, postulez facilement et suivez vos candidatures en temps réel.
+                        </p>
+                        
+                        <!-- Avantages candidat -->
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center text-left">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-sm text-gray-700">Consulter toutes les offres</span>
+                            </div>
+                            <div class="flex items-center text-left">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-sm text-gray-700">Postuler facilement</span>
+                            </div>
+                            <div class="flex items-center text-left">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-sm text-gray-700">Suivre vos candidatures</span>
+                            </div>
+                            <div class="flex items-center text-left">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span class="text-sm text-gray-700">Notifications en temps réel</span>
+                            </div>
+                        </div>
+
+                        <div class="card-actions justify-center">
+                            <a href="register-candidat.html" class="btn bg-gradient-to-r from-green-500 to-green-600 text-white border-none px-8 py-3 text-lg hover:from-green-600 hover:to-green-700">
+                                <i class="fas fa-user-plus mr-2"></i>
+                                S'inscrire comme Candidat
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lien retour connexion -->
+            <div class="text-center mt-12">
+                <p class="text-gray-600">
+                    Vous avez déjà un compte ? 
+                    <a href="login.html" class="link link-primary font-medium">Se connecter</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+

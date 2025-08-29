@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes candidatures - Candidat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <div class="navbar bg-gradient-to-r from-green-600 to-emerald-600 shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="offres.html"><i class="fas fa-briefcase mr-2"></i>Offres d'emploi</a></li>
+                    <li><a href="mes-candidatures.html"><i class="fas fa-file-alt mr-2"></i>Mes candidatures</a></li>
+                    <li><a href="#"><i class="fas fa-user mr-2"></i>Mon profil</a></li>
+                    <li><a href="../auth/login.html"><i class="fas fa-sign-out-alt mr-2"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+            <a href="offres.html" class="btn btn-ghost text-xl text-white font-bold">
+                <i class="fas fa-search mr-2"></i>
+                JobFinder
+            </a>
+        </div>
+        
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-white">
+                <li><a href="offres.html"><i class="fas fa-briefcase mr-2"></i>Offres d'emploi</a></li>
+                <li><a href="mes-candidatures.html" class="active"><i class="fas fa-file-alt mr-2"></i>Mes candidatures</a></li>
+            </ul>
+        </div>
+        
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full bg-white bg-opacity-20">
+                        <div class="avatar-custom">
+                            <span>MD</span>
+                        </div>
+                    </div>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li class="menu-title">Marie Dupont</li>
+                    <li><a href="../auth/login.html"><i class="fas fa-sign-out-alt mr-2"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- En-tête -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Mes candidatures</h1>
+                    <p class="text-gray-600 mt-2">Suivez l'évolution de vos candidatures</p>
+                </div>
+                <a href="offres.html" class="btn bg-gradient-to-r from-green-500 to-green-600 text-white border-none">
+                    <i class="fas fa-plus mr-2"></i>
+                    Nouvelle candidature
+                </a>
+            </div>
+
+            <!-- Statistiques -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-lg p-6 shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-2xl font-bold text-blue-600">7</p>
+                            <p class="text-gray-600 text-sm">Total candidatures</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-file-alt text-blue-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-2xl font-bold text-yellow-600">4</p>
+                            <p class="text-gray-600 text-sm">En attente</p>
+                        </div>
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-clock text-yellow-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-2xl font-bold text-green-600">2</p>
+                            <p class="text-gray-600 text-sm">Acceptées</p>
+                        </div>
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check text-green-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-2xl font-bold text-red-600">1</p>
+                            <p class="text-gray-600 text-sm">Refusées</p>
+                        </div>
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-times text-red-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtres -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+            <form action="">
+                <div class="flex flex-col lg:flex-row gap-4 items-center justify-around">
+                    <div class="form-control flex-1">
+                        <select class="select select-bordered">
+                            <option selected>Tous les statuts</option>
+                            <option>En attente</option>
+                            <option>Accepté</option>
+                            <option>Refusé</option>
+                        </select>
+                    </div>
+                
+                    <div class="form-control flex-1">
+                        <button class="btn bg-gradient-to-r from-green-500 to-green-600 text-white border-none w-full">
+                            <i class="fas fa-search mr-2"></i>
+                            Rechercher
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Liste des candidatures -->
+        <div class="space-y-6" id="candidatures-list-container">
+            <!-- Candidature 1 - Acceptée -->
+            <div class="candidature-card candidature-accepted bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            TC
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Développeur Full Stack</h3>
+                                <span class="status-badge status-active">Accepté</span>
+                                <span class="contract-badge contract-cdi">CDI</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">TechCorp Solutions • Paris, France</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>45k - 55k € par an</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    <span>Candidature du 15 janvier 2024</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="alert alert-success py-2 px-4">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="text-sm">Félicitations ! Votre candidature a été acceptée.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 text-xs text-gray-500">
+                    <i class="fas fa-info-circle mr-1"></i>
+                    Réponse reçue le 18 janvier 2024 • Prochaine étape: Entretien technique prévu l'entreprise vous contactera
+                </div>
+            </div>
+
+            <!-- Candidature 2 - En attente -->
+            <div class="candidature-card candidature-pending bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            DS
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Designer UX/UI</h3>
+                                <span class="status-badge" style="background-color: #fef3c7; color: #92400e;">En attente</span>
+                                <span class="contract-badge contract-cdi">CDI</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">DesignStudio Pro • Lyon, France</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>40k - 50k € par an</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    <span>Candidature du 20 janvier 2024</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">Adobe XD</span>
+                                <span class="skill-tag">Prototyping</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="progress-custom">
+                            <div class="progress-bar" style="width: 30%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500 text-center">Candidature en cours d'examen</p>
+                        <div class="flex gap-2">
+                            
+                            <button class="btn btn-sm btn-error" onclick="retirer_modal_2.showModal()">
+                                <i class="fas fa-trash mr-1"></i>
+                                Retirer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 text-xs text-gray-500">
+                    <i class="fas fa-clock mr-1"></i>
+                    En attente depuis 3 jours • Réponse attendue sous 5-7 jours ouvrés
+                </div>
+            </div>
+
+            <!-- Candidature 3 - Acceptée -->
+            <div class="candidature-card candidature-accepted bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            FS
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Data Scientist</h3>
+                                <span class="status-badge status-active">Accepté</span>
+                                <span class="contract-badge contract-cdi">CDI</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">FinanceSecure • Remote, France</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>55k - 70k € par an</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    <span>Candidature du 10 janvier 2024</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">TensorFlow</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="alert alert-success py-2 px-4">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="text-sm">Candidature acceptée - Contrat signé</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn btn-sm btn-success" disabled>
+                                <i class="fas fa-check mr-1"></i>
+                                Embauché
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 text-xs text-gray-500">
+                    <i class="fas fa-check-circle mr-1"></i>
+                    Contrat signé le 25 janvier 2024 • Prise de poste: 1er février 2024
+                </div>
+            </div>
+
+            <!-- Candidature 4 - En attente -->
+            <div class="candidature-card candidature-pending bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            MD
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Stagiaire Marketing Digital</h3>
+                                <span class="status-badge" style="background-color: #fef3c7; color: #92400e;">En attente</span>
+                                <span class="contract-badge contract-stage">Stage</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">MarketingDigital Inc. • Paris, France</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>800 € par mois</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    <span>Candidature du 22 janvier 2024</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">SEO</span>
+                                <span class="skill-tag">Google Ads</span>
+                                <span class="skill-tag">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="progress-custom">
+                            <div class="progress-bar" style="width: 60%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500 text-center">Entretien programmé</p>
+                        <div class="flex gap-2">
+                            
+                            <button class="btn btn-sm btn-error" onclick="retirer_modal_4.showModal()">
+                                <i class="fas fa-trash mr-1"></i>
+                                Retirer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 text-xs text-gray-500">
+                    <i class="fas fa-calendar-check mr-1"></i>
+                    Entretien prévu le 30 janvier 2024 à 14h00
+                </div>
+            </div>
+
+            <!-- Candidature 5 - Refusée -->
+            <div class="candidature-card candidature-rejected bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            CP
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Chef de Projet IT</h3>
+                                <span class="status-badge" style="background-color: #fee2e2; color: #991b1b;">Refusé</span>
+                                <span class="contract-badge contract-cdd">CDD</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">ConsultingPro • Marseille, France</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>50k - 60k € par an</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    <span>Candidature du 5 janvier 2024</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Agile</span>
+                                <span class="skill-tag">Scrum</span>
+                                <span class="skill-tag">JIRA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="alert alert-error py-2 px-4">
+                            <i class="fas fa-times-circle"></i>
+                            <span class="text-sm">Candidature non retenue</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="mt-4 text-xs text-gray-500">
+                    <i class="fas fa-times-circle mr-1"></i>
+                    Réponse reçue le 12 janvier 2024 • Profil intéressant mais expérience insuffisante
+                </div>
+            </div>
+            <!-- Candidature 6 - Refusée -->
+            <div class="candidature-card candidature-rejected bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            CP
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Chef de Projet IT</h3>
+                                <span class="status-badge" style="background-color: #fee2e2; color: #991b1b;">Refusé</span>
+                                <span class="contract-badge contract-cdd">CDD</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">ConsultingPro • Marseille, France</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>50k - 60k € par an</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    <span>Candidature du 5 janvier 2024</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Agile</span>
+                                <span class="skill-tag">Scrum</span>
+                                <span class="skill-tag">JIRA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="alert alert-error py-2 px-4">
+                            <i class="fas fa-times-circle"></i>
+                            <span class="text-sm">Candidature non retenue</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="mt-4 text-xs text-gray-500">
+                    <i class="fas fa-times-circle mr-1"></i>
+                    Réponse reçue le 12 janvier 2024 • Profil intéressant mais expérience insuffisante
+                </div>
+            </div>
+            <!-- Candidature 7 - Refusée -->
+            <div class="candidature-card candidature-rejected bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            CP
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Chef de Projet IT</h3>
+                                <span class="status-badge" style="background-color: #fee2e2; color: #991b1b;">Refusé</span>
+                                <span class="contract-badge contract-cdd">CDD</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">ConsultingPro • Marseille, France</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>50k - 60k € par an</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    <span>Candidature du 5 janvier 2024</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Agile</span>
+                                <span class="skill-tag">Scrum</span>
+                                <span class="skill-tag">JIRA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="alert alert-error py-2 px-4">
+                            <i class="fas fa-times-circle"></i>
+                            <span class="text-sm">Candidature non retenue</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="mt-4 text-xs text-gray-500">
+                    <i class="fas fa-times-circle mr-1"></i>
+                    Réponse reçue le 12 janvier 2024 • Profil intéressant mais expérience insuffisante
+                </div>
+            </div>
+            <!-- Candidature 8 - Refusée -->
+            <div class="candidature-card candidature-rejected bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            CP
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Chef de Projet IT</h3>
+                                <span class="status-badge" style="background-color: #fee2e2; color: #991b1b;">Refusé</span>
+                                <span class="contract-badge contract-cdd">CDD</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">ConsultingPro • Marseille, France</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>50k - 60k € par an</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    <span>Candidature du 5 janvier 2024</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag">Agile</span>
+                                <span class="skill-tag">Scrum</span>
+                                <span class="skill-tag">JIRA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="alert alert-error py-2 px-4">
+                            <i class="fas fa-times-circle"></i>
+                            <span class="text-sm">Candidature non retenue</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="mt-4 text-xs text-gray-500">
+                    <i class="fas fa-times-circle mr-1"></i>
+                    Réponse reçue le 12 janvier 2024 • Profil intéressant mais expérience insuffisante
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <!-- <div class="flex justify-center mt-8">
+            <div class="join">
+                <button class="join-item btn">«</button>
+                <button class="join-item btn btn-active">1</button>
+                <button class="join-item btn">2</button>
+                <button class="join-item btn">»</button>
+            </div>
+        </div> -->
+    </div>
+
+    <!-- Modales de confirmation de retrait -->
+    <dialog id="retirer_modal_2" class="modal">
+        <div class="modal-box">
+            <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            </form>
+            <h3 class="font-bold text-lg text-orange-600 mt-10">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                Retirer la candidature
+            </h3>
+            <p class="py-4">Êtes-vous sûr de vouloir retirer votre candidature pour le poste de "Designer UX/UI" chez DesignStudio Pro ?</p>
+            <div class="modal-action">
+                <form>
+                    <button class="btn btn-error">
+                        <i class="fas fa-trash mr-2"></i>
+                        Retirer la candidature
+                    </button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="retirer_modal_4" class="modal">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg text-orange-600">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                Retirer la candidature
+            </h3>
+            <p class="py-4">Êtes-vous sûr de vouloir retirer votre candidature pour le poste de "Stagiaire Marketing Digital" chez MarketingDigital Inc. ?</p>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn btn-ghost mr-2">Annuler</button>
+                    <button class="btn btn-error">
+                        <i class="fas fa-trash mr-2"></i>
+                        Retirer la candidature
+                    </button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Toast notifications -->
+    <div class="toast toast-top toast-end hidden">
+        <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i>
+            <span>Candidature retirée avec succès</span>
+        </div>
+    </div>
+
+    <script src="../../js/pagination.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setupPagination("candidatures-list-container", 3);
+        });
+    </script>
+</body>
+</html>
+

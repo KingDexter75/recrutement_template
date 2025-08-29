@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offres d'emploi - Candidat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <div class="navbar bg-gradient-to-r from-green-600 to-emerald-600 shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </div>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="offres.html"><i class="fas fa-briefcase mr-2"></i>Offres d'emploi</a></li>
+                    <li><a href="mes-candidatures.html"><i class="fas fa-file-alt mr-2"></i>Mes candidatures</a></li>
+                    <li><a href="#"><i class="fas fa-user mr-2"></i>Mon profil</a></li>
+                    <li><a href="../auth/login.html"><i class="fas fa-sign-out-alt mr-2"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost text-xl text-white font-bold">
+                <i class="fas fa-search mr-2"></i>
+                JobFinder
+            </a>
+        </div>
+
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-white">
+                <li><a href="offres.html" class="active"><i class="fas fa-briefcase mr-2"></i>Offres d'emploi</a></li>
+                <li><a href="mes-candidatures.html"><i class="fas fa-file-alt mr-2"></i>Mes candidatures</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full bg-white bg-opacity-20">
+                        <div class="avatar-custom">
+                            <span>MD</span>
+                        </div>
+                    </div>
+                </div>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li class="menu-title">Marie Dupont</li>
+                    <li><a href="../auth/login.html"><i class="fas fa-sign-out-alt mr-2"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- En-tête avec recherche -->
+        <div class="mb-8">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Trouvez votre emploi idéal</h1>
+                <p class="text-xl text-gray-600">Découvrez des milliers d'opportunités qui correspondent à votre profil
+                </p>
+            </div>
+
+            <!-- Barre de recherche principale -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+                    <div class="form-control lg:col-span-2">
+                        <div class="relative">
+                            <input type="text" placeholder="Poste, entreprise, mots-clés..."
+                                class="input input-bordered w-full pl-10 text-lg">
+                            <i
+                                class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <div class="relative">
+                            <input type="text" placeholder="Localisation" class="input input-bordered w-full pl-10">
+                            <i
+                                class="fas fa-map-marker-alt absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <button class="btn bg-gradient-to-r from-green-500 to-green-600 text-white border-none w-full">
+                            <i class="fas fa-search mr-2"></i>
+                            Rechercher
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistiques -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">2,847</div>
+                    <div class="text-gray-600">Offres disponibles</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">1,234</div>
+                    <div class="text-gray-600">Entreprises partenaires</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-purple-600 mb-2">89%</div>
+                    <div class="text-gray-600">Taux de satisfaction</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtres -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+            <form action="">
+                <div class="flex flex-col justify-around lg:flex-row gap-4 items-center">
+                    <div class="form-control flex-1">
+                        <select class="select select-bordered">
+                            <option selected>Tous les contrats</option>
+                            <option>CDI</option>
+                            <option>CDD</option>
+                            <option>Stage</option>
+                            <option>Freelance</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-control flex-1">
+                        <button class="btn bg-gradient-to-r from-green-500 to-green-600 text-white border-none w-full">
+                            <i class="fas fa-search mr-2"></i>
+                            Rechercher
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Liste des offres -->
+        <div class="space-y-6" id="offers-list-container">
+            <!-- Offre 1 -->
+            <div class="job-card bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            TC
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Développeur Full Stack</h3>
+                                <span class="contract-badge contract-cdi">CDI</span>
+                                <span class="badge badge-success badge-sm">Nouveau</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">TechCorp Solutions</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-1"></i>
+                                    <span>Paris, France</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>45k - 55k € par an</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span>Publié le 12-12-2025</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">TypeScript</span>
+                            </div>
+                            <p class="text-gray-700 text-sm">Rejoignez notre équipe dynamique pour développer des
+                                applications web innovantes. Environnement collaboratif et technologies modernes.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <a href="detail-offre-candidat.html?id=1" class="btn btn-primary">
+                            <i class="fas fa-eye mr-2"></i>
+                            Voir l\''offre
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Offre 2 -->
+            <div class="job-card bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            DS
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Designer UX/UI</h3>
+                                <span class="contract-badge contract-cdi">CDI</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">DesignStudio Pro</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-1"></i>
+                                    <span>Lyon, France</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>40k - 50k € par an</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span>Publié le 12-12-2025</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">Adobe XD</span>
+                                <span class="skill-tag">Prototyping</span>
+                                <span class="skill-tag">User Research</span>
+                            </div>
+                            <p class="text-gray-700 text-sm">Créez des expériences utilisateur exceptionnelles pour nos
+                                clients. Studio créatif avec des projets variés et stimulants.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <a href="detail-offre-candidat.html?id=2" class="btn btn-primary">
+                            <i class="fas fa-eye mr-2"></i>
+                            Voir l\''offre
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Offre 3 -->
+            <div class="job-card bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            MD
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Stagiaire Marketing Digital</h3>
+                                <span class="contract-badge contract-stage">Stage</span>
+                                <span class="badge badge-warning badge-sm">Urgent</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">MarketingDigital Inc.</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-1"></i>
+                                    <span>Paris, France</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>800 € par mois</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span>Publié le 12-12-2025</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="skill-tag">SEO</span>
+                                <span class="skill-tag">Google Ads</span>
+                                <span class="skill-tag">Analytics</span>
+                                <span class="skill-tag">Social Media</span>
+                            </div>
+                            <p class="text-gray-700 text-sm">Stage de 6 mois dans une agence dynamique. Parfait pour
+                                débuter dans le marketing digital avec un encadrement de qualité.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <a href="detail-offre-candidat.html?id=3" class="btn btn-primary">
+                            <i class="fas fa-eye mr-2"></i>
+                            Voir l\''offre
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Offre 4 -->
+            <div class="job-card bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            FS
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Data Scientist</h3>
+                                <span class="contract-badge contract-cdi">CDI</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">FinanceSecure</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-1"></i>
+                                    <span>Remote, France</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>55k - 70k € par an</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span>Publié le 12-12-2025</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">SQL</span>
+                            </div>
+                            <p class="text-gray-700 text-sm">Analysez des données financières complexes et développez
+                                des modèles prédictifs. Poste 100% remote avec équipe internationale.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <a href="detail-offre-candidat.html?id=4" class="btn btn-primary">
+                            <i class="fas fa-eye mr-2"></i>
+                            Voir l\''offre
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Offre 5 -->
+            <div class="job-card bg-white rounded-lg shadow-sm p-6">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                    <div class="flex items-start gap-4 flex-1">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            CP
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900">Chef de Projet IT</h3>
+                                <span class="contract-badge contract-cdd">CDD</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">ConsultingPro</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-1"></i>
+                                    <span>Marseille, France</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-euro-sign mr-1"></i>
+                                    <span>50k - 60k € par an</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span>Publié le 12-12-2025</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="skill-tag">Agile</span>
+                                <span class="skill-tag">Scrum</span>
+                                <span class="skill-tag">JIRA</span>
+                                <span class="skill-tag">Management</span>
+                            </div>
+                            <p class="text-gray-700 text-sm">Pilotez des projets IT stratégiques pour nos clients.
+                                Mission de 12 mois avec possibilité de prolongation.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <a href="detail-offre-candidat.html?id=5" class="btn btn-primary">
+                            <i class="fas fa-eye mr-2"></i>
+                            Voir l\''offre
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <!-- <div class="flex justify-center mt-8">
+            <div class="join">
+                <button class="join-item btn">«</button>
+                <button class="join-item btn btn-active">1</button>
+                <button class="join-item btn">2</button>
+                <button class="join-item btn">3</button>
+                <button class="join-item btn">4</button>
+                <button class="join-item btn">5</button>
+                <button class="join-item btn">»</button>
+            </div>
+        </div> -->
+
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast toast-top toast-end hidden">
+        <div class="alert alert-success">
+            <i class="fas fa-heart"></i>
+            <span>Offre sauvegardée !</span>
+        </div>
+    </div>
+
+    <script src="../../js/pagination.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function ()
+        {
+            setupPagination("offers-list-container", 3);
+        });
+    </script>
+</body>
+
+</html>

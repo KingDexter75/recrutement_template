@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Recrutement - Trouvez votre emploi idéal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <div class="navbar bg-white shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <i class="fas fa-bars text-xl"></i>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+                    <li><a href="#statistiques">Statistiques</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost text-xl font-bold text-blue-600">
+                <i class="fas fa-briefcase mr-2"></i>
+                JobConnect Pro
+            </a>
+        </div>
+        
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+                <li><a href="#statistiques">Statistiques</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="navbar-end">
+            <a href="pages/auth/login.html" class="btn btn-ghost mr-2">
+                <i class="fas fa-sign-in-alt mr-2"></i>
+                Connexion
+            </a>
+            <a href="pages/auth/register-choice.html" class="btn btn-gradient text-white">
+                <i class="fas fa-user-plus mr-2"></i>
+                S'inscrire
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="hero-content text-center">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl font-bold text-gray-900 mb-6 fade-in">
+                    La plateforme de recrutement 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                        nouvelle génération
+                    </span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed fade-in">
+                    Connectez talents et entreprises grâce à notre solution innovante. 
+                    Que vous soyez recruteur ou candidat, trouvez votre match parfait en quelques clics.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 fade-in">
+                    <a href="pages/auth/register-choice.html" class="btn btn-gradient text-white btn-lg">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Commencer maintenant
+                    </a>
+                    <a href="#fonctionnalites" class="btn btn-outline btn-lg">
+                        <i class="fas fa-play mr-2"></i>
+                        Découvrir les fonctionnalités
+                    </a>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">2,847</div>
+                        <div class="text-gray-600">Offres d'emploi actives</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-green-600 mb-2">1,234</div>
+                        <div class="text-gray-600">Entreprises partenaires</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">15,678</div>
+                        <div class="text-gray-600">Candidats inscrits</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="fonctionnalites" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Fonctionnalités complètes</h2>
+                <p class="text-xl text-gray-600">Tout ce dont vous avez besoin pour réussir votre recrutement</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+                <!-- Pour les Recruteurs -->
+                <div class="space-y-8">
+                    <div class="text-center lg:text-left">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-4">
+                            <i class="fas fa-building text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Pour les Recruteurs</h3>
+                        <p class="text-gray-600 mb-6">Gérez efficacement vos offres d'emploi et vos candidatures</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-plus text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Création d'offres simplifiée</h4>
+                                <p class="text-gray-600 text-sm">Interface intuitive pour publier vos offres d'emploi avec tous les détails nécessaires</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-users text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Gestion des candidatures</h4>
+                                <p class="text-gray-600 text-sm">Triez, acceptez ou refusez les candidatures avec notifications automatiques</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-download text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Téléchargement CV & Lettres</h4>
+                                <p class="text-gray-600 text-sm">Accédez facilement aux CV et lettres de motivation des candidats</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-chart-bar text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Dashboard complet</h4>
+                                <p class="text-gray-600 text-sm">Statistiques détaillées et vue d'ensemble de vos recrutements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pour les Candidats -->
+                <div class="space-y-8">
+                    <div class="text-center lg:text-left">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-4">
+                            <i class="fas fa-user text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Pour les Candidats</h3>
+                        <p class="text-gray-600 mb-6">Trouvez et postulez aux offres qui vous correspondent</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-search text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Recherche avancée</h4>
+                                <p class="text-gray-600 text-sm">Filtrez les offres par secteur, localisation, type de contrat et salaire</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-paper-plane text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Candidature simplifiée</h4>
+                                <p class="text-gray-600 text-sm">Postulez en quelques clics avec votre CV et lettre de motivation</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-eye text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Suivi des candidatures</h4>
+                                <p class="text-gray-600 text-sm">Consultez le statut de vos candidatures en temps réel</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-bell text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Notifications instantanées</h4>
+                                <p class="text-gray-600 text-sm">Recevez des alertes pour les nouvelles offres et réponses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistiques" class="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Nos résultats parlent d'eux-mêmes</h2>
+                <p class="text-xl opacity-90">Une plateforme qui fait ses preuves</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-4">95%</div>
+                    <div class="text-lg opacity-90">Taux de satisfaction</div>
+                    <div class="text-sm opacity-75 mt-2">des utilisateurs recommandent notre plateforme</div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-4">72h</div>
+                    <div class="text-lg opacity-90">Temps moyen</div>
+                    <div class="text-sm opacity-75 mt-2">pour recevoir une première réponse</div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-4">500+</div>
+                    <div class="text-lg opacity-90">Entreprises</div>
+                    <div class="text-sm opacity-75 mt-2">font confiance à notre solution</div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-5xl font-bold mb-4">89%</div>
+                    <div class="text-lg opacity-90">Taux de matching</div>
+                    <div class="text-sm opacity-75 mt-2">entre candidats et entreprises</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">Prêt à commencer ?</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Rejoignez des milliers d'utilisateurs qui ont déjà trouvé leur bonheur sur notre plateforme
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="pages/auth/register-recruteur.html" class="btn btn-gradient text-white btn-lg">
+                    <i class="fas fa-building mr-2"></i>
+                    Je suis recruteur
+                </a>
+                <a href="pages/auth/register-candidat.html" class="btn btn-outline btn-lg">
+                    <i class="fas fa-user mr-2"></i>
+                    Je cherche un emploi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer footer-center p-10 bg-gray-900 text-white">
+        <div class="grid grid-flow-col gap-4">
+            <a class="link link-hover">À propos</a>
+            <a class="link link-hover">Contact</a>
+            <a class="link link-hover">Conditions d'utilisation</a>
+            <a class="link link-hover">Confidentialité</a>
+        </div>
+        
+        <div class="grid grid-flow-col gap-4">
+            <a class="text-2xl hover:text-blue-400 transition-colors">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a class="text-2xl hover:text-blue-600 transition-colors">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a class="text-2xl hover:text-blue-800 transition-colors">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+        
+        <div>
+            <div class="font-bold text-lg mb-2">
+                <i class="fas fa-briefcase mr-2"></i>
+                JobConnect Pro
+            </div>
+            <p class="opacity-75">La plateforme de recrutement nouvelle génération</p>
+            <p class="opacity-50 text-sm mt-2">© 2024 JobConnect Pro. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription Recruteur - Plateforme de Recrutement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <!-- En-tête -->
+            <div class="text-center">
+                <div class="mx-auto h-16 w-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-building text-white text-2xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Inscription Recruteur</h2>
+                <p class="text-gray-600">Créez votre compte entreprise</p>
+            </div>
+
+            <!-- Formulaire d'inscription -->
+            <div class="form-container fade-in">
+                <form class="space-y-6" action="../recruteur/dashboard.html" method="get">
+                    <!-- Nom de l'entreprise -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-medium">Nom de l'entreprise *</span>
+                        </label>
+                        <div class="relative">
+                            <input type="text" 
+                                   placeholder="Ex: TechCorp Solutions" 
+                                   class="input input-bordered w-full pl-10 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                   required>
+                            <i class="fas fa-building absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Email professionnel -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-medium">Email professionnel *</span>
+                        </label>
+                        <div class="relative">
+                            <input type="email" 
+                                   placeholder="recruteur@entreprise.com" 
+                                   class="input input-bordered w-full pl-10 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                   required>
+                            <i class="fas fa-envelope absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                        <label class="label">
+                            <span class="label-text-alt text-gray-500">Utilisez votre email professionnel</span>
+                        </label>
+                    </div>
+
+                    <!-- Mot de passe -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-medium">Mot de passe *</span>
+                        </label>
+                        <div class="relative">
+                            <input type="password" 
+                                   placeholder="••••••••" 
+                                   class="input input-bordered w-full pl-10 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                   required>
+                            <i class="fas fa-lock absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Bouton d'inscription -->
+                    <div class="form-control">
+                        <button type="submit" class="btn btn-gradient w-full text-white font-medium py-3">
+                            <i class="fas fa-user-plus mr-2"></i>
+                            Créer mon compte recruteur
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Séparateur -->
+                <div class="divider my-6">ou</div>
+
+                <!-- Lien vers connexion -->
+                <div class="text-center">
+                    <p class="text-gray-600">
+                        Vous avez déjà un compte ? 
+                        <a href="login.html" class="link link-primary font-medium">Se connecter</a>
+                    </p>
+                </div>
+
+                <!-- Retour au choix -->
+                <div class="text-center mt-4">
+                    <a href="register-choice.html" class="text-gray-500 hover:text-blue-600 transition-colors text-sm">
+                        <i class="fas fa-arrow-left mr-1"></i>
+                        Retour au choix du profil
+                    </a>
+                </div>
+            </div>
+
+            <!-- Avantages recruteur -->
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <h3 class="font-semibold text-gray-900 mb-4 text-center">Vos avantages recruteur</h3>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Offres illimitées</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Gestion candidatures</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Statistiques détaillées</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Support prioritaire</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast de confirmation -->
+    <div class="toast toast-top toast-end hidden">
+        <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i>
+            <span>Compte créé avec succès !</span>
+        </div>
+    </div>
+</body>
+</html>
+

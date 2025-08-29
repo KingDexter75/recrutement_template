@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier l'offre - Dashboard Recruteur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <div class="navbar navbar-custom shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a></li>
+                    <li><a href="ajouter-offre.html"><i class="fas fa-plus mr-2"></i>Nouvelle offre</a></li>
+                    <li><a href="#"><i class="fas fa-user mr-2"></i>Profil</a></li>
+                    <li><a href="../auth/login.html"><i class="fas fa-sign-out-alt mr-2"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+            <a href="dashboard.html" class="btn btn-ghost text-xl text-white font-bold">
+                <i class="fas fa-briefcase mr-2"></i>
+                RecrutPro
+            </a>
+        </div>
+        
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-white">
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a></li>
+                <li><a href="ajouter-offre.html"><i class="fas fa-plus mr-2"></i>Nouvelle offre</a></li>
+            </ul>
+        </div>
+        
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full bg-white bg-opacity-20">
+                        <div class="avatar-custom">
+                            <span>TC</span>
+                        </div>
+                    </div>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li class="menu-title">TechCorp Solutions</li>
+                    <li><a href="#"><i class="fas fa-user mr-2"></i>Profil</a></li>
+                    <li><a href="#"><i class="fas fa-cog mr-2"></i>Paramètres</a></li>
+                    <li><a href="../auth/login.html"><i class="fas fa-sign-out-alt mr-2"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Breadcrumb -->
+        <div class="breadcrumbs text-sm mb-6">
+            <ul>
+                <li><a href="dashboard.html" class="text-blue-600 hover:text-blue-800">Dashboard</a></li>
+                <li><a href="detail-offre.html?id=1" class="text-blue-600 hover:text-blue-800">Développeur Full Stack</a></li>
+                <li>Modifier</li>
+            </ul>
+        </div>
+
+        <!-- En-tête -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Modifier l'offre d'emploi</h1>
+            <p class="text-gray-600">Modifiez les informations de votre offre "Développeur Full Stack"</p>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="bg-white rounded-lg shadow-sm p-8">
+            <form action="detail-offre.html?id=1" method="get" class="space-y-8">
+                <!-- Informations générales -->
+                <div class="border-b border-gray-200 pb-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">
+                        <i class="fas fa-info-circle mr-2 text-blue-600"></i>
+                        Informations générales
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Nom du poste -->
+                        <div class="form-control lg:col-span-2">
+                            <label class="label">
+                                <span class="label-text font-medium">Nom du poste *</span>
+                            </label>
+                            <input type="text" 
+                                   value="Développeur Full Stack" 
+                                   class="input input-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                   required>
+                        </div>
+
+                        <!-- Type de contrat -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Type de contrat *</span>
+                            </label>
+                            <select class="select select-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                <option disabled>Choisir un type</option>
+                                <option value="CDI" selected>CDI - Contrat à Durée Indéterminée</option>
+                                <option value="CDD">CDD - Contrat à Durée Déterminée</option>
+                                <option value="STAGE">Stage</option>
+                            </select>
+                        </div>
+
+                        <!-- Statut de l'offre -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Statut de l'offre *</span>
+                            </label>
+                            <select class="select select-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                <option value="active" selected>Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="closed">Fermée</option>
+                            </select>
+                        </div>
+
+                        <!-- Localisation -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Localisation *</span>
+                            </label>
+                            <div class="relative">
+                                <input type="text" 
+                                       value="Paris, France" 
+                                       class="input input-bordered w-full pl-10 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                       required>
+                                <i class="fas fa-map-marker-alt absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            </div>
+                        </div>
+
+                        <!-- Nombre de candidats attendus -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Nombre de candidats attendus *</span>
+                            </label>
+                            <input type="number" 
+                                   value="5" 
+                                   min="1" 
+                                   class="input input-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                   required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rémunération -->
+                <div class="border-b border-gray-200 pb-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">
+                        <i class="fas fa-euro-sign mr-2 text-green-600"></i>
+                        Rémunération
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Salaire minimum -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Salaire minimum (€) *</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" 
+                                       value="45000" 
+                                       min="0" 
+                                       class="input input-bordered w-full pl-8 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                       required>
+                                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">€</span>
+                            </div>
+                        </div>
+
+                        <!-- Salaire maximum -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Salaire maximum (€) *</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" 
+                                       value="55000" 
+                                       min="0" 
+                                       class="input input-bordered w-full pl-8 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                       required>
+                                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">€</span>
+                            </div>
+                        </div>
+
+                        <!-- Période -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Période</span>
+                            </label>
+                            <select class="select select-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="annuel" selected>Par an</option>
+                                <option value="mensuel">Par mois</option>
+                                <option value="horaire">Par heure</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Avantages -->
+                    <div class="form-control mt-6">
+                        <label class="label">
+                            <span class="label-text font-medium">Avantages</span>
+                        </label>
+                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                            <label class="cursor-pointer label justify-start">
+                                <input type="checkbox" class="checkbox checkbox-primary mr-3" checked />
+                                <span class="label-text">Télétravail</span>
+                            </label>
+                            <label class="cursor-pointer label justify-start">
+                                <input type="checkbox" class="checkbox checkbox-primary mr-3" checked />
+                                <span class="label-text">Tickets restaurant</span>
+                            </label>
+                            <label class="cursor-pointer label justify-start">
+                                <input type="checkbox" class="checkbox checkbox-primary mr-3" checked />
+                                <span class="label-text">Mutuelle</span>
+                            </label>
+                            <label class="cursor-pointer label justify-start">
+                                <input type="checkbox" class="checkbox checkbox-primary mr-3" />
+                                <span class="label-text">13ème mois</span>
+                            </label>
+                            <label class="cursor-pointer label justify-start">
+                                <input type="checkbox" class="checkbox checkbox-primary mr-3" checked />
+                                <span class="label-text">Formation</span>
+                            </label>
+                            <label class="cursor-pointer label justify-start">
+                                <input type="checkbox" class="checkbox checkbox-primary mr-3" />
+                                <span class="label-text">Primes</span>
+                            </label>
+                            <label class="cursor-pointer label justify-start">
+                                <input type="checkbox" class="checkbox checkbox-primary mr-3" checked />
+                                <span class="label-text">RTT</span>
+                            </label>
+                            <label class="cursor-pointer label justify-start">
+                                <input type="checkbox" class="checkbox checkbox-primary mr-3" />
+                                <span class="label-text">Parking</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compétences requises -->
+                <div class="border-b border-gray-200 pb-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">
+                        <i class="fas fa-cogs mr-2 text-purple-600"></i>
+                        Compétences requises
+                    </h2>
+                    
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-medium">Compétences techniques *</span>
+                            <span class="label-text-alt">Séparez par des virgules</span>
+                        </label>
+                        <textarea class="textarea textarea-bordered h-24 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                  required>React, Node.js, MongoDB, TypeScript, Docker, Git, Jest, Express.js</textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+                        <!-- Niveau d'expérience -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Niveau d'expérience requis</span>
+                            </label>
+                            <select class="select select-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option disabled>Choisir un niveau</option>
+                                <option>Débutant (0-2 ans)</option>
+                                <option selected>Intermédiaire (2-5 ans)</option>
+                                <option>Confirmé (5-10 ans)</option>
+                                <option>Expert (10+ ans)</option>
+                            </select>
+                        </div>
+
+                        <!-- Niveau d'études -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Niveau d'études</span>
+                            </label>
+                            <select class="select select-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option disabled>Choisir un niveau</option>
+                                <option>Bac</option>
+                                <option>Bac+2</option>
+                                <option>Bac+3</option>
+                                <option selected>Bac+5</option>
+                                <option>Doctorat</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description du poste -->
+                <div class="border-b border-gray-200 pb-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">
+                        <i class="fas fa-file-alt mr-2 text-orange-600"></i>
+                        Description du poste
+                    </h2>
+                    
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-medium">Description détaillée *</span>
+                        </label>
+                        <textarea class="textarea textarea-bordered h-32 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                                  required>Nous recherchons un développeur Full Stack passionné pour rejoindre notre équipe dynamique. Vous travaillerez sur des projets innovants utilisant les dernières technologies web. L'environnement de travail est collaboratif et favorise l'apprentissage continu.</textarea>
+                    </div>
+
+                    <div class="form-control mt-6">
+                        <label class="label">
+                            <span class="label-text font-medium">Missions principales</span>
+                        </label>
+                        <textarea class="textarea textarea-bordered h-24 focus:ring-2 focus:ring-blue-500 focus:border-transparent">• Développer des applications web modernes avec React et Node.js
+• Collaborer avec l'équipe design pour implémenter les interfaces utilisateur
+• Maintenir et optimiser le code existant
+• Participer aux revues de code et aux réunions d'équipe
+• Contribuer à l'architecture technique des projets</textarea>
+                    </div>
+
+                    <div class="form-control mt-6">
+                        <label class="label">
+                            <span class="label-text font-medium">Profil recherché</span>
+                        </label>
+                        <textarea class="textarea textarea-bordered h-24 focus:ring-2 focus:ring-blue-500 focus:border-transparent">Nous recherchons une personne motivée, avec un bon esprit d'équipe et une passion pour les nouvelles technologies. Une expérience en méthodologie Agile serait un plus. Capacité à travailler de manière autonome tout en sachant collaborer efficacement.</textarea>
+                    </div>
+                </div>
+
+                <!-- Options de publication -->
+                <div class="pb-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">
+                        <i class="fas fa-share-alt mr-2 text-indigo-600"></i>
+                        Options de publication
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Date de publication -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Date de publication</span>
+                            </label>
+                            <input type="date" 
+                                   value="2024-01-10"
+                                   class="input input-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+
+                        <!-- Date de fin -->
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text font-medium">Date de fin de publication</span>
+                            </label>
+                            <input type="date" 
+                                   value="2024-03-10"
+                                   class="input input-bordered w-full focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <!-- Options supplémentaires -->
+                    <div class="mt-6 space-y-4">
+                        <label class="cursor-pointer label justify-start">
+                            <input type="checkbox" class="checkbox checkbox-primary mr-3" checked />
+                            <span class="label-text">Recevoir les candidatures par email</span>
+                        </label>
+                        <label class="cursor-pointer label justify-start">
+                            <input type="checkbox" class="checkbox checkbox-primary mr-3" />
+                            <span class="label-text">Offre urgente (mise en avant)</span>
+                        </label>
+                        <label class="cursor-pointer label justify-start">
+                            <input type="checkbox" class="checkbox checkbox-primary mr-3" checked />
+                            <span class="label-text">Permettre les candidatures spontanées</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Boutons d'action -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-end pt-6 border-t border-gray-200">
+                    <a href="detail-offre.html?id=1" class="btn btn-ghost">
+                        <i class="fas fa-times mr-2"></i>
+                        Annuler
+                    </a>
+                    <button type="button" class="btn btn-outline">
+                        <i class="fas fa-save mr-2"></i>
+                        Enregistrer en brouillon
+                    </button>
+                    <button type="submit" class="btn btn-gradient text-white">
+                        <i class="fas fa-check mr-2"></i>
+                        Enregistrer les modifications
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast de confirmation -->
+    <div class="toast toast-top toast-end hidden">
+        <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i>
+            <span>Modifications enregistrées avec succès !</span>
+        </div>
+    </div>
+</body>
+</html>
+

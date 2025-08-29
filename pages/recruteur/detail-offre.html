@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Développeur Full Stack - Candidatures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <div class="navbar navbar-custom shadow-lg">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a></li>
+                    <li><a href="ajouter-offre.html"><i class="fas fa-plus mr-2"></i>Nouvelle offre</a></li>
+                    <li><a href="#"><i class="fas fa-user mr-2"></i>Profil</a></li>
+                    <li><a href="../auth/login.html"><i class="fas fa-sign-out-alt mr-2"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+            <a href="dashboard.html" class="btn btn-ghost text-xl text-white font-bold">
+                <i class="fas fa-briefcase mr-2"></i>
+                RecrutPro
+            </a>
+        </div>
+        
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-white">
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a></li>
+                <li><a href="ajouter-offre.html"><i class="fas fa-plus mr-2"></i>Nouvelle offre</a></li>
+            </ul>
+        </div>
+        
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full bg-white bg-opacity-20">
+                        <div class="avatar-custom">
+                            <span>TC</span>
+                        </div>
+                    </div>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li class="menu-title">TechCorp Solutions</li>
+                    <li><a href="#"><i class="fas fa-user mr-2"></i>Profil</a></li>
+                    <li><a href="#"><i class="fas fa-cog mr-2"></i>Paramètres</a></li>
+                    <li><a href="../auth/login.html"><i class="fas fa-sign-out-alt mr-2"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Breadcrumb -->
+        <div class="breadcrumbs text-sm mb-6">
+            <ul>
+                <li><a href="dashboard.html" class="text-blue-600 hover:text-blue-800">Dashboard</a></li>
+                <li>Développeur Full Stack</li>
+            </ul>
+        </div>
+
+        <!-- En-tête de l'offre -->
+        <div class="bg-white rounded-lg shadow-sm p-8 mb-6">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                <div class="flex-1">
+                    <div class="flex items-center gap-4 mb-4">
+                        <h1 class="text-3xl font-bold text-gray-900">Développeur Full Stack</h1>
+                        <span class="status-badge status-active">Active</span>
+                        <span class="contract-badge contract-cdi">CDI</span>
+                    </div>
+                    
+                    <div class="flex flex-wrap items-center gap-4 text-gray-600 mb-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-building mr-2"></i>
+                            <span>TechCorp Solutions</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Paris, France</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-euro-sign mr-2"></i>
+                            <span>45k - 55k € par an</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-users mr-2"></i>
+                            <span>5 candidats attendus</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+
+                <div class="flex gap-3">
+                    <a href="modifier-offre.html?id=1" class="btn btn-warning">
+                        <i class="fas fa-edit mr-2"></i>
+                        Modifier
+                    </a>
+                    <button class="btn btn-error" onclick="delete_modal.showModal()">
+                        <i class="fas fa-trash mr-2"></i>
+                        Supprimer
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistiques des candidatures -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-2xl font-bold text-blue-600">12</p>
+                        <p class="text-gray-600 text-sm">Total candidatures</p>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-file-alt text-blue-600"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-2xl font-bold text-yellow-600">8</p>
+                        <p class="text-gray-600 text-sm">En attente</p>
+                    </div>
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-clock text-yellow-600"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-2xl font-bold text-green-600">3</p>
+                        <p class="text-gray-600 text-sm">Acceptées</p>
+                    </div>
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-check text-green-600"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-2xl font-bold text-red-600">1</p>
+                        <p class="text-gray-600 text-sm">Refusées</p>
+                    </div>
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-times text-red-600"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtres des candidatures -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+            <div class="flex flex-col lg:flex-row gap-4 items-center">
+                <div class="form-control flex-1">
+                    <div class="relative">
+                        <input type="text" placeholder="Rechercher un candidat..." class="input input-bordered w-full pl-10">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <select class="select select-bordered">
+                        <option selected>Tous les statuts</option>
+                        <option>En attente</option>
+                        <option>Accepté</option>
+                        <option>Refusé</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <select class="select select-bordered">
+                        <option selected>Trier par date</option>
+                        <option>Plus récent</option>
+                        <option>Plus ancien</option>
+                        <option>Nom A-Z</option>
+                        <option>Nom Z-A</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Liste des candidatures -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h2 class="text-xl font-semibold text-gray-900">Candidatures reçues</h2>
+            </div>
+
+            <div class="divide-y divide-gray-200">
+                <!-- Candidature 1 - En attente -->
+                <div class="candidature-card candidature-pending p-6">
+                    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                        <div class="flex items-start gap-4 flex-1">
+                            <div class="avatar-custom">
+                                <span>MD</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="font-semibold text-gray-900">Marie Dupont</h3>
+                                    <span class="status-badge" style="background-color: #fef3c7; color: #92400e;">En attente</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-2">marie.dupont@email.com • 06 12 34 56 78</p>
+                                <p class="text-gray-600 text-sm mb-3">Développeuse Full Stack avec 4 ans d'expérience en React et Node.js</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">TypeScript</span>
+                                    <span class="skill-tag">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col lg:flex-row gap-3">
+                            <div class="flex gap-2">
+                                <button class="btn btn-sm btn-outline" onclick="cv_modal_1.showModal()">
+                                    <i class="fas fa-file-pdf mr-1"></i>
+                                    CV
+                                </button>
+                                <button class="btn btn-sm btn-outline" onclick="lettre_modal_1.showModal()">
+                                    <i class="fas fa-envelope mr-1"></i>
+                                    Lettre
+                                </button>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn btn-sm btn-success">
+                                    <i class="fas fa-check mr-1"></i>
+                                    Accepter
+                                </button>
+                                <button class="btn btn-sm btn-error">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Refuser
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-xs text-gray-500">
+                        <i class="fas fa-calendar mr-1"></i>
+                        Candidature reçue le 15 janvier 2024
+                    </div>
+                </div>
+
+                <!-- Candidature 2 - Acceptée -->
+                <div class="candidature-card candidature-accepted p-6">
+                    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                        <div class="flex items-start gap-4 flex-1">
+                            <div class="avatar-custom">
+                                <span>JM</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="font-semibold text-gray-900">Jean Martin</h3>
+                                    <span class="status-badge status-active">Accepté</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-2">jean.martin@email.com • 07 98 76 54 32</p>
+                                <p class="text-gray-600 text-sm mb-3">Senior Full Stack Developer, 6 ans d'expérience, spécialisé en architecture microservices</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">Docker</span>
+                                    <span class="skill-tag">AWS</span>
+                                    <span class="skill-tag">GraphQL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col lg:flex-row gap-3">
+                            <div class="flex gap-2">
+                                <button class="btn btn-sm btn-outline" onclick="cv_modal_2.showModal()">
+                                    <i class="fas fa-file-pdf mr-1"></i>
+                                    CV
+                                </button>
+                                <button class="btn btn-sm btn-outline" onclick="lettre_modal_2.showModal()">
+                                    <i class="fas fa-envelope mr-1"></i>
+                                    Lettre
+                                </button>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn btn-sm btn-info">
+                                    <i class="fas fa-envelope mr-1"></i>
+                                    Contacter
+                                </button>
+                                <button class="btn btn-sm btn-warning">
+                                    <i class="fas fa-undo mr-1"></i>
+                                    Annuler
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-xs text-gray-500">
+                        <i class="fas fa-calendar mr-1"></i>
+                        Candidature acceptée le 18 janvier 2024
+                    </div>
+                </div>
+
+                <!-- Candidature 3 - En attente -->
+                <div class="candidature-card candidature-pending p-6">
+                    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                        <div class="flex items-start gap-4 flex-1">
+                            <div class="avatar-custom">
+                                <span>SL</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="font-semibold text-gray-900">Sophie Leroy</h3>
+                                    <span class="status-badge" style="background-color: #fef3c7; color: #92400e;">En attente</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-2">sophie.leroy@email.com • 06 45 67 89 12</p>
+                                <p class="text-gray-600 text-sm mb-3">Développeuse Junior, récemment diplômée, motivée et passionnée par les nouvelles technologies</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">CSS</span>
+                                    <span class="skill-tag">Git</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col lg:flex-row gap-3">
+                            <div class="flex gap-2">
+                                <button class="btn btn-sm btn-outline" onclick="cv_modal_3.showModal()">
+                                    <i class="fas fa-file-pdf mr-1"></i>
+                                    CV
+                                </button>
+                                <button class="btn btn-sm btn-outline" onclick="lettre_modal_3.showModal()">
+                                    <i class="fas fa-envelope mr-1"></i>
+                                    Lettre
+                                </button>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn btn-sm btn-success">
+                                    <i class="fas fa-check mr-1"></i>
+                                    Accepter
+                                </button>
+                                <button class="btn btn-sm btn-error">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Refuser
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-xs text-gray-500">
+                        <i class="fas fa-calendar mr-1"></i>
+                        Candidature reçue le 20 janvier 2024
+                    </div>
+                </div>
+
+                <!-- Candidature 4 - Refusée -->
+                <div class="candidature-card candidature-rejected p-6">
+                    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                        <div class="flex items-start gap-4 flex-1">
+                            <div class="avatar-custom">
+                                <span>PD</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="font-semibold text-gray-900">Pierre Dubois</h3>
+                                    <span class="status-badge" style="background-color: #fee2e2; color: #991b1b;">Refusé</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-2">pierre.dubois@email.com • 06 11 22 33 44</p>
+                                <p class="text-gray-600 text-sm mb-3">Développeur Backend, 3 ans d'expérience principalement en PHP</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag">PHP</span>
+                                    <span class="skill-tag">MySQL</span>
+                                    <span class="skill-tag">Laravel</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col lg:flex-row gap-3">
+                            <div class="flex gap-2">
+                                <button class="btn btn-sm btn-outline" onclick="cv_modal_4.showModal()">
+                                    <i class="fas fa-file-pdf mr-1"></i>
+                                    CV
+                                </button>
+                                <button class="btn btn-sm btn-outline" onclick="lettre_modal_4.showModal()">
+                                    <i class="fas fa-envelope mr-1"></i>
+                                    Lettre
+                                </button>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn btn-sm btn-ghost" disabled>
+                                    <i class="fas fa-times mr-1"></i>
+                                    Refusé
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-xs text-gray-500">
+                        <i class="fas fa-calendar mr-1"></i>
+                        Candidature refusée le 16 janvier 2024
+                    </div>
+                </div>
+                <!-- Candidature 5 - Refusée -->
+                <div class="candidature-card candidature-rejected p-6">
+                    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                        <div class="flex items-start gap-4 flex-1">
+                            <div class="avatar-custom">
+                                <span>PD</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="font-semibold text-gray-900">Pierre Dubois</h3>
+                                    <span class="status-badge" style="background-color: #fee2e2; color: #991b1b;">Refusé</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-2">pierre.dubois@email.com • 06 11 22 33 44</p>
+                                <p class="text-gray-600 text-sm mb-3">Développeur Backend, 3 ans d'expérience principalement en PHP</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag">PHP</span>
+                                    <span class="skill-tag">MySQL</span>
+                                    <span class="skill-tag">Laravel</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col lg:flex-row gap-3">
+                            <div class="flex gap-2">
+                                <button class="btn btn-sm btn-outline" onclick="cv_modal_4.showModal()">
+                                    <i class="fas fa-file-pdf mr-1"></i>
+                                    CV
+                                </button>
+                                <button class="btn btn-sm btn-outline" onclick="lettre_modal_4.showModal()">
+                                    <i class="fas fa-envelope mr-1"></i>
+                                    Lettre
+                                </button>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn btn-sm btn-ghost" disabled>
+                                    <i class="fas fa-times mr-1"></i>
+                                    Refusé
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-xs text-gray-500">
+                        <i class="fas fa-calendar mr-1"></i>
+                        Candidature refusée le 16 janvier 2024
+                    </div>
+                </div>
+                <!-- Candidature 6 - Refusée -->
+                <div class="candidature-card candidature-rejected p-6">
+                    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                        <div class="flex items-start gap-4 flex-1">
+                            <div class="avatar-custom">
+                                <span>PD</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="font-semibold text-gray-900">Pierre Dubois</h3>
+                                    <span class="status-badge" style="background-color: #fee2e2; color: #991b1b;">Refusé</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-2">pierre.dubois@email.com • 06 11 22 33 44</p>
+                                <p class="text-gray-600 text-sm mb-3">Développeur Backend, 3 ans d'expérience principalement en PHP</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag">PHP</span>
+                                    <span class="skill-tag">MySQL</span>
+                                    <span class="skill-tag">Laravel</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col lg:flex-row gap-3">
+                            <div class="flex gap-2">
+                                <button class="btn btn-sm btn-outline" onclick="cv_modal_4.showModal()">
+                                    <i class="fas fa-file-pdf mr-1"></i>
+                                    CV
+                                </button>
+                                <button class="btn btn-sm btn-outline" onclick="lettre_modal_4.showModal()">
+                                    <i class="fas fa-envelope mr-1"></i>
+                                    Lettre
+                                </button>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn btn-sm btn-ghost" disabled>
+                                    <i class="fas fa-times mr-1"></i>
+                                    Refusé
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-xs text-gray-500">
+                        <i class="fas fa-calendar mr-1"></i>
+                        Candidature refusée le 16 janvier 2024
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <!-- <div class="flex justify-center py-4">
+                <div class="join">
+                    <button class="join-item btn">«</button>
+                    <button class="join-item btn btn-active">1</button>
+                    <button class="join-item btn">2</button>
+                    <button class="join-item btn">»</button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Modales pour CV -->
+    <dialog id="cv_modal_1" class="modal">
+        <div class="modal-box max-w-4xl">
+            <h3 class="font-bold text-lg mb-4">CV - Marie Dupont</h3>
+            <div class="bg-gray-100 p-8 rounded-lg text-center">
+                <i class="fas fa-file-pdf text-6xl text-red-500 mb-4"></i>
+                <p class="text-gray-600 mb-4">CV_Marie_Dupont.pdf</p>
+                <div class="flex gap-4 justify-center">
+                    <a href="CV_Marie_Dupont.pdf" download="" class="btn btn-primary">
+                        <i class="fas fa-download mr-2"></i>
+                        Télécharger
+                    </a>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-eye mr-2"></i>
+                        Aperçu
+                    </button>
+                </div>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Fermer</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Modales pour lettres de motivation -->
+    <dialog id="lettre_modal_1" class="modal">
+        <div class="modal-box max-w-2xl">
+            <h3 class="font-bold text-lg mb-4">Lettre de motivation - Marie Dupont</h3>
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <p class="text-gray-800 leading-relaxed">
+                    Madame, Monsieur,<br><br>
+                    
+                    Passionnée par le développement web et forte de 4 années d'expérience en tant que développeuse Full Stack, je souhaite rejoindre votre équipe chez TechCorp Solutions.<br><br>
+                    
+                    Mon expertise en React, Node.js et MongoDB, ainsi que ma capacité à travailler en équipe agile, me permettront de contribuer efficacement à vos projets innovants.<br><br>
+                    
+                    Je serais ravie de discuter de ma candidature lors d'un entretien.<br><br>
+                    
+                    Cordialement,<br>
+                    Marie Dupont
+                </p>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Fermer</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Modal de suppression -->
+    <dialog id="delete_modal" class="modal">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg text-red-600">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                Confirmer la suppression
+            </h3>
+            <p class="py-4">Êtes-vous sûr de vouloir supprimer cette offre d'emploi ? Cette action supprimera également toutes les candidatures associées.</p>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn btn-ghost mr-2">Annuler</button>
+                    <button class="btn btn-error">
+                        <i class="fas fa-trash mr-2"></i>
+                        Supprimer définitivement
+                    </button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Autres modales similaires pour les autres candidats -->
+    <dialog id="cv_modal_2" class="modal">
+        <div class="modal-box max-w-4xl">
+            <h3 class="font-bold text-lg mb-4">CV - Jean Martin</h3>
+            <div class="bg-gray-100 p-8 rounded-lg text-center">
+                <i class="fas fa-file-pdf text-6xl text-red-500 mb-4"></i>
+                <p class="text-gray-600 mb-4">CV_Jean_Martin.pdf</p>
+                <div class="flex gap-4 justify-center">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-download mr-2"></i>
+                        Télécharger
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-eye mr-2"></i>
+                        Aperçu
+                    </button>
+                </div>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Fermer</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="lettre_modal_2" class="modal">
+        <div class="modal-box max-w-2xl">
+            <h3 class="font-bold text-lg mb-4">Lettre de motivation - Jean Martin</h3>
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <p class="text-gray-800 leading-relaxed">
+                    Bonjour,<br><br>
+                    
+                    Senior Full Stack Developer avec 6 ans d'expérience, je suis spécialisé dans l'architecture microservices et les technologies modernes.<br><br>
+                    
+                    Votre offre m'intéresse particulièrement car elle correspond parfaitement à mon profil technique et à mes aspirations professionnelles.<br><br>
+                    
+                    Je reste à votre disposition pour un entretien.<br><br>
+                    
+                    Cordialement,<br>
+                    Jean Martin
+                </p>
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Fermer</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Toast de confirmation -->
+    <div id="toast" class="toast toast-top toast-end hidden transition-opacity duration-500 opacity-100">
+        <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i>
+            <span>Offre publiée avec succès !</span>
+        </div>
+    </div>
+    
+    <script>
+        function showToast()
+        {
+            const toast = document.getElementById("toast");
+
+            // Affiche le toast
+            toast.classList.remove("hidden");
+            toast.classList.remove("opacity-0");
+            toast.classList.add("opacity-100");
+
+            // Après 2.5s -> commence le fondu
+            setTimeout(() =>
+            {
+                toast.classList.remove("opacity-100");
+                toast.classList.add("opacity-0");
+            }, 2500);
+
+            // Après 3s -> le cache complètement
+            setTimeout(() =>
+            {
+                toast.classList.add("hidden");
+            }, 3000);
+        }
+
+        // Lancer automatiquement le toast dès que la page est chargée
+        window.addEventListener("DOMContentLoaded", showToast);
+    </script>
+
+</body>
+</html>
+
