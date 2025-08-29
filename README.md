@@ -175,6 +175,10 @@ Cette plateforme est idéale pour :
 - Système de notifications en temps réel
 - Chat intégré entre recruteurs et candidats
 
+![1756451639501](image/README/1756451639501.jpg)
+
+![1756451661609](image/README/1756451661609.jpg)![1756451669545](image/README/1756451669545.jpg)![1756451681914](image/README/1756451681914.jpg)![1756451703982](image/README/1756451703982.jpg)![1756451711194](image/README/1756451711194.jpg)
+
 ---
 
 **Développé avec ❤️ en utilisant HTML, CSS et DaisyUI**
